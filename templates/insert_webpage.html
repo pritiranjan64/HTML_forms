@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>insert_topic</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="tn">TopicName</label>
+            <select name="tn" id="tn">
+                {% for to in QLTO %}
+                    <option value="{{to.topic_name}}">{{to.topic_name}}</option>
+                {% endfor %}
+            </select><br>
+            <label for="na">Name</label>
+            <input type="text" name="na" id="na"><br>
+
+            <label for="url">url</label>
+            <input type="url" name="url" id="url"><br>
+
+            <label for="email">email</label>
+            <input type="email" name="email" id="email"><br>
+
+            <input type="submit">
+        </form>
+    </center>
+</body>
+</html>

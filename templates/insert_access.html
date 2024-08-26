@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>insert_Access</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="na">Name</label>
+            <select name="na" id="na">
+                {% for wo in QLWO %}
+                    <option value="{{wo.id}}">{{wo.name}}</option>
+                {% endfor %}
+            </select><br>
+            
+            <label for="d">date</label>
+            <input type="date" name="d" id="d"><br>
+
+            <label for="au">author</label>
+            <input type="text" name="au" id="au"><br>
+
+            <input type="submit">
+        </form>
+    </center>
+</body>
+</html>
